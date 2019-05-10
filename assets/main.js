@@ -9,25 +9,25 @@ new Vue( {
 	<br><hr><br>
 	<b>Data, collected in "input-group":</b><br>
 	<ol>
-		<li v-for="item in items.values">{{item}}</li>
+		<li v-for="item in items">{{item}}</li>
 	</ol>
 
 </div>
 `,
 	data: {
-		items: {values: ["111222333", "1000000"]}
+		items: ["111222333", "1000000"]
 	},
 	methods: {
 		deleteLastInput() {
-			if ( this.items.values.length > 1 )
-				this.items.values.pop();
+			if ( this.items.length > 1 )
+				this.items.pop();
 			else {
-				Vue.set( this.items.values, 0, "" );
+				Vue.set( this.items, 0, "" );
 			}
 		},
 
 		addNewInput() {
-			this.items.values.push("");
+			this.items.push("");
 		}
 	}
 } );
