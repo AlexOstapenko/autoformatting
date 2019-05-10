@@ -15,7 +15,7 @@ new Vue( {
 </div>
 `,
 	data: {
-		items: {values: [""]}
+		items: {values: ["111222333", "1000000"]}
 	},
 	methods: {
 		deleteLastInput() {
