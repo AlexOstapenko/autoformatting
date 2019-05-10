@@ -1,0 +1,11 @@
+.text-input {
+	font-family: Courier;
+	font-size: 2rem;
+	border: 0;
+	border-bottom: 1px solid blue;
+}
+
+.text-input:focus {
+	outline: none;
+}
+

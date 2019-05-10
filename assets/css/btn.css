@@ -1,0 +1,25 @@
+.btn {
+	font-size: 1.2rem;
+	color: #ffffff;
+	background-color: #182be2;
+	border: 1px solid transparent;
+}
+
+.btn:active {
+   transform: translateY(1px);
+   filter: saturate(150%);
+}
+
+.btn:hover {
+   color: #535fd9;
+   border-color: currentColor;
+   background-color: white;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn::-moz-focus-inner {
+   border: none;
+}

@@ -1,0 +1,19 @@
+body {
+	font-family: Arial;
+	font-size: 1.2rem;
+}
+
+.text-input {
+	font-family: Courier;
+	font-size: 2rem;
+	border: 0;
+	border-bottom: 1px solid blue;
+}
+
+.text-input:focus {
+	outline: none;
+}
+
+.little-b-margin {
+	margin-bottom: 0.4em;
+}
