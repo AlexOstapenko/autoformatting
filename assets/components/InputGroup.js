@@ -15,7 +15,7 @@ Vue.component( "input-group", {
 `,
 	data () {
 		return {
-			arr: this.value.values.concat([]) // get array from props
+			arr: this.value && this.value.concat([]) // get array from props if any
 		}
 	},
 	methods: {
@@ -25,8 +25,7 @@ Vue.component( "input-group", {
 			if ( editedItem )
 				Vue.set( this.arr, editedItem.id , editedItem.value );
 
-			let values = {values: this.arr};
-			this.$emit("input", values); // send back to parent
+			this.$emit("input", this.arr); // send back to parent
 		}
 	}
 
