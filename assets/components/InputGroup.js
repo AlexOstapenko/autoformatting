@@ -16,7 +16,7 @@ Vue.component( "input-group", {
 	data () {
 
 		return {
-			arr: this.value ? this.value : [""] // get array from props if any
+			arr: (this.value && typeof this.value=="Array") ? this.value  : [""] // get array from props if any
 		}
 	},
 	methods: {
