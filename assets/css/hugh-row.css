@@ -3,8 +3,6 @@
 	vertical-align: center;
 	position: relative;
 	margin-bottom: 2rem;
-	
-		border: 1px solid red;
 }
 
 .hugh-row > div {
@@ -21,8 +19,6 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	
-	border: 1px solid yellow;
 }
 
 .hugh-title {
