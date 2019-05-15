@@ -1,26 +1,29 @@
 .hugh-row {
 	margin-top: 1.5rem;
 	vertical-align: center;
-	
+	position: relative;
+	margin-bottom: 2rem;
 }
 
 .hugh-row > div {
 	padding-right: 1em;
 	display: inline-block;
-	vertical-align: top
 }
 
-.hugh-row-item {
-	margin-bottom: 2rem;
-}
-
-.hugh-row-item--last {
+.hugh-row--last {
 	margin-bottom: 0;
+}
+
+.hugh-input-container {
+	min-width: 200px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .hugh-title {
 	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 0.8125rem;
 	margin-top: 0.4rem;
 }
@@ -30,12 +33,13 @@
 }
 
 .hugh-input {
-	margin-top: 0.7rem
-
+	margin-top: 0.7rem;
+	display: inline;
 }
 
 .hugh-input-hours {
 	font-weight: 300;
+	display: inline;	
 }
 
 .hugh-img {

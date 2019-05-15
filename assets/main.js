@@ -6,7 +6,7 @@ new Vue( {
 	<button class="btn" @click="addNewInput">+</button>
 	<button class="btn" @click="deleteLastInput">-</button>
 	<input-group v-model="items"></input-group>
-	<br><hr><br>
+	<hr><br>
 	<b>Data, collected in "input-group":</b><br>
 	<ol>
 		<li v-for="item in items">{{item.value}}, selected: {{item["selected"]}}</li>

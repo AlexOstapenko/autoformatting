@@ -9,15 +9,15 @@ Vue.component( "input-group", {
 `
 <div>
  	<div class="hugh-row" 
- 		:class="{'hugh-row-item' : i < arr.length-1, 'hugh-row-item--last': i==arr.length-1 }" 
+ 		:class="{'hugh-row--last': i==arr.length-1 }" 
  		v-for="(item,i) in arr" :key="i">
  		<div>
-			<img 
+			<img
 				class="hugh-img"
 				:class="{'hugh-img--selected': item.selected}" 
 				src="assets/img/hugh.png">
 		</div>
-		<div>
+		<div class="hugh-input-container">
 			<div class="hugh-title" :class="{'hugh-title--selected': item.selected}">
 				<strong>HUGH IS</strong>
 			</div>
@@ -29,8 +29,8 @@ Vue.component( "input-group", {
 					@editorActive="editorActive"
 					:borderClass="item.selected ? 'text-input--selected' : ''">
 				</auto-formatting-text-editor>
-				<span class="hugh-input-hours">hours old</span>
 			</div>
+			<span class="hugh-input-hours">hours old</span>
 		</div>
 	</div>
 </div>
