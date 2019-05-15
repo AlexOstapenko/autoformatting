@@ -1,8 +1,13 @@
 body {
-	font-family: Arial;
-	font-size: 1.2rem;
+	font-family: Roboto;
+	font-size: 0.875rem;
 }
 
 .little-b-margin {
 	margin-bottom: 0.4em;
+}
+
+
+.centered {
+	text-align: center;
 }

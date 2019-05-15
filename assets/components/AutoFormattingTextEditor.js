@@ -7,16 +7,20 @@
 */
 
 Vue.component( "auto-formatting-text-editor", {
-	props: ["value", "id"],
+	props: ["value", "id", "borderClass"],
 	template: 
 `
 	<div style="display: inline">
-		<input class="text-input"
+		<input 
+			class="text-input"
+			:class="borderClass"
 			type="text" 
+			placeholder="0"
 			v-model="myValue" 
 			ref="domInput"
 			@input="onInput"
-			@keydown="onKeydown">
+			@keydown="onKeydown"
+			@focus="onFocus">
 	</div>
 `,
 	data() {
@@ -105,6 +109,7 @@ Vue.component( "auto-formatting-text-editor", {
 
 			this.updateInputSize();
 			this.$emit( "input", {value: this.myValue, id: this.myId} );
+			this.$emit( "editorActive", this.id );
 		},
 
 		onKeydown(e) {
@@ -133,6 +138,10 @@ Vue.component( "auto-formatting-text-editor", {
 
 			if (this.keyInfo.right && caret < this.myValue.length && this.myValue[caret+1]==AutoFormattingTextEditonSettings.separator)
 			 	this.setCaret( caret + 1 );
+		},
+
+		onFocus() {
+			this.$emit( "editorActive", this.id );
 		},
 
 		/*

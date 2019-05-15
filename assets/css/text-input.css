@@ -1,9 +1,14 @@
 .text-input {
-	font-family: Courier;
-	font-size: 2rem;
+	font-family: Roboto;
+	font-size: 0.875rem;
 	border: 0;
+	border-bottom: 1px solid gray;
+}
+
+.text-input--selected {
 	border-bottom: 1px solid blue;
 }
+
 
 .text-input:focus {
 	outline: none;
