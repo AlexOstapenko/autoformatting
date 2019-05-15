@@ -23,6 +23,7 @@ Vue.component( "input-group", {
 			</div>
 			<div class="hugh-input">
 				<auto-formatting-text-editor 
+					:focused="item.selected"
 					@input="onInput" 
 					:value="item.value" 
 					:id="i"

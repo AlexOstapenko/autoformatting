@@ -7,7 +7,7 @@
 */
 
 Vue.component( "auto-formatting-text-editor", {
-	props: ["value", "id", "borderClass"],
+	props: ["value", "id", "borderClass", "focused"],
 	template: 
 `
 	<div style="display: inline">
@@ -20,7 +20,7 @@ Vue.component( "auto-formatting-text-editor", {
 			ref="domInput"
 			@input="onInput"
 			@keydown="onKeydown"
-			@focus="onFocus">
+			@mousedown="onFocus">
 	</div>
 `,
 	data() {
@@ -46,6 +46,8 @@ Vue.component( "auto-formatting-text-editor", {
 	},
 	updated() {
 		this.setCaret( this.caret );
+		if (this.focused)
+			this.$refs.domInput.focus();
 	},
 	watch: 
 	{
@@ -107,12 +109,16 @@ Vue.component( "auto-formatting-text-editor", {
 			// make sure it is not negative, otherwise the caret will go to the end of input
 			if (this.caret < 0) this.caret = 0;
 
-			this.updateInputSize();
 			this.$emit( "input", {value: this.myValue, id: this.myId} );
 			this.$emit( "editorActive", this.id );
+			this.updateInputSize();
+
+			return true;
 		},
 
 		onKeydown(e) {
+
+			this.$refs.domInput.focus();
 
 			const caret = this.currentCaret();
 			const BACKSPACE = 8;
@@ -138,10 +144,13 @@ Vue.component( "auto-formatting-text-editor", {
 
 			if (this.keyInfo.right && caret < this.myValue.length && this.myValue[caret+1]==AutoFormattingTextEditonSettings.separator)
 			 	this.setCaret( caret + 1 );
+
+			 return true;
 		},
 
 		onFocus() {
 			this.$emit( "editorActive", this.id );
+			return true;
 		},
 
 		/*
